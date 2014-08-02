@@ -1,6 +1,6 @@
 require 'active_support/core_ext/hash/keys'
 require 'active_support/core_ext/class/subclasses'
-require 'jekyll/slim/template'
+require 'slim/liquid'
 require 'jekyll/slim/version'
 require 'jekyll/slim/extensions/layout'
 require 'jekyll/slim/extensions/site'

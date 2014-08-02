@@ -18,7 +18,7 @@ module Jekyll
       end
 
       def convert(content)
-        Template.new(@symbolized_config) { content }.render(locals[:slim_context])
+        ::Slim::Liquid::Converter.new(@symbolized_config) { content }.render(locals[:slim_context])
       end
 
       def ensure_config_integrity

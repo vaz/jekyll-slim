@@ -19,7 +19,7 @@ Gem::Specification.new do |gem|
 
   gem.add_runtime_dependency 'jekyll', '~> 2.0.0'
   gem.add_runtime_dependency 'activesupport', '~> 4.0'
-  gem.add_runtime_dependency 'slim', '~> 2.0.2'
+  gem.add_runtime_dependency 'slim-liquid'
 
   gem.add_development_dependency('rake')
   gem.add_development_dependency('bundler')

@@ -63,7 +63,7 @@ module Jekyll
           if choices.include?(@file)
             source = File.read(@file)
             context.registers[:site].slim_context.params = parse_params(context.registers[:site].slim_context)
-            conversion = Template.new(context.registers[:site].config['slim'].deep_symbolize_keys) { source }.render(context.registers[:site].slim_context)
+            conversion = ::Slim::Liquid::Converter.new(context.registers[:site].config['slim'].deep_symbolize_keys) { source }.render(context.registers[:site].slim_context)
             partial = Liquid::Template.parse(conversion)
             begin
               return partial.render!(context)
