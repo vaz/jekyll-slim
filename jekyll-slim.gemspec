@@ -6,11 +6,11 @@ require 'jekyll/slim/version'
 Gem::Specification.new do |gem|
   gem.name          = 'jekyll-slim'
   gem.version       = Jekyll::Slim::VERSION
-  gem.authors       = ['Reda Lemeden', 'Francesco Belladonna']
+  gem.authors       = ['Reda Lemeden', 'Francesco Belladonna', 'Daniel Menlder']
   gem.email         = ['reda@thoughtbot.com', 'francesco.belladonna@gmail.com']
   gem.description   = %q{Slim html converter for Jekyll}
   gem.summary       = %q{Slim-lang support for Jekyll. Handles includes and layouts as well.}
-  gem.homepage      = ''
+  gem.homepage      = 'https://github.com/slim-template/jekyll-slim'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
