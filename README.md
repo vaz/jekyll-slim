@@ -30,6 +30,17 @@ In your Jekyll project's `_plugins` directory:
     require 'bundler/setup'
     Bundler.require(:default)
 
+### Important notes
+Right now it's required to use these additional lines in Gemfile (as of version
+`0.10.0`):
+
+```ruby
+gem 'slim-liquid', github: 'slim-template/slim-liquid'
+gem 'slim', github: 'slim-template/slim'
+```
+
+Until those gems are updated
+
 ## Usage
 
 The gem will convert all the `.slim` files in your project's directory into HTML. That includes files in sub-directories, includes and layouts. Example:
@@ -94,6 +105,9 @@ liquid tag. Those are more or less global variables in slim templates, so be car
   - https://github.com/mojombo/jekyll/blob/a9e2a74ea619a01a9d169da2240ce91b43362c9f/lib/jekyll/page.rb
   - http://jekyllrb.com/docs/plugins/
   - http://jekyllrb.com/docs/variables/
+
+## Looking for maintainers
+We are looking for maintainers for this gem.
 
 ## Credit
 
