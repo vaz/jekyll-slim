@@ -1,5 +1,10 @@
 module Jekyll
   class Layout
+    # path is required
+    # Also related to https://github.com/mojombo/jekyll/issues/225
+    def path
+      @name
+    end
 
     # Allows layouts to be transformed by slim until this is fixed (1.4)
     # https://github.com/mojombo/jekyll/issues/225
