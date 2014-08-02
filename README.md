@@ -1,4 +1,10 @@
-# Jekyll-slim
+# Jekyll-Slim development moved
+
+Development has moved to https://github.com/slim-template/jekyll-slim
+
+------
+
+## Jekyll-slim
 
 [![Gem Version](http://img.shields.io/gem/v/jekyll-slim.svg?style=flat)](#)
 [![Dependency
