@@ -1,5 +1,3 @@
-require 'jekyll-slim/slim_context'
-
 module Jekyll
   class Site
 
@@ -15,7 +13,7 @@ module Jekyll
         conv = c.new(self.config)
         # XXX: Hotfix to allow access site variable in slim/haml templates
         if conv.respond_to?(:locals)
-          @slim_context ||= SlimContext.new(self)
+          @slim_context ||= Jekyll::Slim::Context.new(self)
           conv.locals({ slim_context: @slim_context })
         end
 
