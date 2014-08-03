@@ -30,7 +30,7 @@ module Jekyll
         def hash2ostruct(hash)
           h = {}
           hash.keys.each do |k|
-            v = hash.delete(k)
+            v = hash[k]
             h[k] = Hash === v ? hash2ostruct(v) : v
           end
           OpenStruct.new(h)
@@ -39,7 +39,7 @@ module Jekyll
         def symbolize_hash(hash)
           h = {}
           hash.keys.each do |k|
-            v = hash.delete(k)
+            v = hash[k]
             h[(k.to_sym rescue k) || k] = Hash === v ? symbolize_hash(v) : v
           end
           h

@@ -25,10 +25,8 @@ Or install it yourself as:
 
 In your Jekyll project's `_plugins` directory:
 
-    # _plugins/bundler.rb
-    require 'rubygems'
-    require 'bundler/setup'
-    Bundler.require(:default)
+    # _plugins/jekyll-slim.rb
+    require 'jekyll-slim'
 
 ### Important notes
 Right now it's required to use these additional lines in Gemfile (as of version
@@ -50,8 +48,7 @@ The gem will convert all the `.slim` files in your project's directory into HTML
 html
   head
   body
-    .content-wrapper
-      | {{ content }}
+    .content-wrapper {{ content }}
 ```
 To include a partial, use the `slim` liquid tag instead of `include`:
 
@@ -62,7 +59,7 @@ layout: default
 ---
 
 section.content Content goes here.
-| {% slim footer.slim %}
+% include footer.slim
 
 ```
 
