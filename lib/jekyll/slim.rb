@@ -1,5 +1,5 @@
 require 'ostruct'
-require 'slim/liquid'
+require 'sliq'
 require 'jekyll'
 require 'jekyll/slim/version'
 require 'jekyll/slim/extensions'
