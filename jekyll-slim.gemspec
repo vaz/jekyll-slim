@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
 
   gem.add_runtime_dependency 'jekyll', '~> 2.0.0'
-  gem.add_runtime_dependency 'slim-liquid'
+  gem.add_runtime_dependency 'sliq'
 
   gem.add_development_dependency('rake')
   gem.add_development_dependency('bundler')

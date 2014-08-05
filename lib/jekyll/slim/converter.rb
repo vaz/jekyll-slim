@@ -24,7 +24,7 @@ module Jekyll
           # Allow also direct access to the site and page object from Slim
           context.site_object = Convertible.slim_current_convertible.site
           context.page_object = Convertible.slim_current_convertible
-          ::Slim::Liquid::Converter.new(config) { content }.render(context)
+          ::Sliq::Converter.new(config) { content }.render(context)
         end
 
         def hash2ostruct(hash)
