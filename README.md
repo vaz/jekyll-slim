@@ -33,8 +33,7 @@ Right now it's required to use these additional lines in Gemfile (as of version
 `0.10.0`):
 
 ```ruby
-gem 'slim-liquid', github: 'slim-template/slim-liquid'
-gem 'slim', github: 'slim-template/slim'
+gem 'sliq', github: 'slim-template/sliq'
 ```
 
 Until those gems are updated
