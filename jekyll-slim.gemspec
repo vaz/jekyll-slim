@@ -7,7 +7,7 @@ Gem::Specification.new do |gem|
   gem.name          = 'jekyll-slim'
   gem.version       = Jekyll::Slim::VERSION
   gem.authors       = ['Reda Lemeden', 'Francesco Belladonna', 'Daniel Menlder']
-  gem.email         = ['reda@thoughtbot.com', 'francesco.belladonna@gmail.com']
+  gem.email         = ['reda@thoughtbot.com', 'francesco.belladonna@gmail.com', 'mail@daniel-mendler.de']
   gem.description   = %q{Slim html converter for Jekyll}
   gem.summary       = %q{Slim-lang support for Jekyll. Handles includes and layouts as well.}
   gem.homepage      = 'https://github.com/slim-template/jekyll-slim'

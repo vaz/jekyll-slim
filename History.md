@@ -1,3 +1,7 @@
+0.10.0 / 2014-10-10
+===================
+
+  * Major refactoring. jekyll-slim uses sliq from now on.
 
 0.8.2 / 2013-05-06
 ==================

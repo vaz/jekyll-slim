@@ -28,16 +28,6 @@ In your Jekyll project's `_plugins` directory:
     # _plugins/jekyll-slim.rb
     require 'jekyll-slim'
 
-### Important notes
-Right now it's required to use these additional lines in Gemfile (as of version
-`0.10.0`):
-
-```ruby
-gem 'sliq', github: 'slim-template/sliq'
-```
-
-Until those gems are updated
-
 ## Usage
 
 The gem will convert all the `.slim` files in your project's directory into HTML. That includes files in sub-directories, includes and layouts. Example:

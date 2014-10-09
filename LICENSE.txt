@@ -1,4 +1,4 @@
-Copyright (c) 2013 Reda Lemeden
+Copyright (c) 2013 Reda Lemeden, 2014 Daniel Mendler
 
 MIT License
 
