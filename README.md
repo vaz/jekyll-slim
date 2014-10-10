@@ -2,10 +2,10 @@
 
 [![Gem Version](http://img.shields.io/gem/v/jekyll-slim.svg?style=flat)](#)
 [![Dependency
-Status](http://img.shields.io/gemnasium/kaishin/jekyll-slim.svg?style=flat)](https://gemnasium.com/kaishin/jekyll-slim)
+Status](http://img.shields.io/gemnasium/slim-template/jekyll-slim.svg?style=flat)](https://gemnasium.com/slim-template/jekyll-slim)
 [![Code
-Climate](http://img.shields.io/codeclimate/github/kaishin/jekyll-slim.svg?style=flat)](https://codeclimate.com/github/kaishin/jekyll-slim)
-[![Build Status](http://img.shields.io/travis/kaishin/jekyll-slim.svg?style=flat)](https://travis-ci.org/kaishin/jekyll-slim)
+Climate](http://img.shields.io/codeclimate/github/slim-template/jekyll-slim.svg?style=flat)](https://codeclimate.com/github/slim-template/jekyll-slim)
+[![Build Status](http://img.shields.io/travis/slim-template/jekyll-slim.svg?style=flat)](https://travis-ci.org/slim-template/jekyll-slim)
 
 A gem that adds [slim-lang](http://slim-lang.com) support to [Jekyll](http://github.com/mojombo/jekyll). Works for for pages, includes and layouts.
 
@@ -14,6 +14,7 @@ A gem that adds [slim-lang](http://slim-lang.com) support to [Jekyll](http://git
 Add this line to your Gemfile:
 
     gem 'jekyll-slim'
+    gem 'slim', github: 'slim-template/slim'
 
 And then execute:
 
@@ -27,6 +28,10 @@ In your Jekyll project's `_plugins` directory:
 
     # _plugins/jekyll-slim.rb
     require 'jekyll-slim'
+
+### Important!
+
+This gem requires slim from the github master branch for now.
 
 ## Usage
 
