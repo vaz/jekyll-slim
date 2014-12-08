@@ -1,34 +1,48 @@
 module Jekyll
-  class Layout
-    # path is required
-    # Also related to https://github.com/mojombo/jekyll/issues/225
-    def path
-      @name
-    end
-
-    # Allows layouts to be transformed by slim until this is fixed (1.4)
-    # https://github.com/mojombo/jekyll/issues/225
-    # https://github.com/mojombo/jekyll/blob/master/lib/jekyll/layout.rb
-    alias old_initialize initialize
-    def initialize(*args)
-      old_initialize(*args)
-      transform
-    end
-
-    def to_liquid
-      data.merge(name: name, content: content)
-    end
-  end
-
   module Convertible
-    class<< self
-      attr_accessor :slim_current_convertible
+    def render_liquid_with_transform(content, payload, info, path = nil)
+      content = pretransform(content)
+      render_liquid_without_transform(content, payload, info, path)
     end
 
-    alias old_transform transform
-    def transform
-      Convertible.slim_current_convertible = self
-      old_transform
+    alias_method :render_liquid_without_transform, :render_liquid
+    alias_method :render_liquid, :render_liquid_with_transform
+
+    def converters_without_preconverters
+      converters_with_preconverters.reject { |c| c.is_a? Jekyll::Slim::Converter }
     end
+
+    alias_method :converters_with_preconverters, :converters
+    alias_method :converters, :converters_without_preconverters
+
+    def preconverters
+      converters_with_preconverters.select { |c| c.is_a? Jekyll::Slim::Converter }
+    end
+
+    def pretransform(content)
+      preconverters.reduce(content) do |output, converter|
+        begin
+          converter.convert output
+        rescue => e
+          Jekyll.logger.error "Conversion error:", "#{converter.class} encountered an error while preconverting '#{path}':"
+          Jekyll.logger.error("", e.to_s)
+          raise e
+        end
+      end
+    end
+
+    def output_ext_with_preconverters
+      if preconverters.all? { |c| c.is_a?(Jekyll::Converters::Identity) }
+        output_ext_without_preconverters
+      else
+        preconverters.map do |c|
+          c.output_ext(ext) unless c.is_a?(Jekyll::Converters::Identity)
+        end.compact.last
+      end
+    end
+
+    alias_method :output_ext_without_preconverters, :output_ext
+    alias_method :output_ext, :output_ext_with_preconverters
   end
+
 end

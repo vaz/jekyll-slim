@@ -18,13 +18,8 @@ module Jekyll
 
       class << self
         def convert(config, content)
-          config = symbolize_hash(config['slim'] || {}).merge(file: Convertible.slim_current_convertible.path)
-          context = hash2ostruct(Utils.deep_merge_hashes(Convertible.slim_current_convertible.site.site_payload,
-                                                         page: Convertible.slim_current_convertible.to_liquid))
-          # Allow also direct access to the site and page object from Slim
-          context.site_object = Convertible.slim_current_convertible.site
-          context.page_object = Convertible.slim_current_convertible
-          ::Sliq::Converter.new(config) { content }.render(context)
+          config = symbolize_hash(config['slim'] || {})
+          ::Sliq::Converter.new(config) { content }.render()
         end
 
         def hash2ostruct(hash)
